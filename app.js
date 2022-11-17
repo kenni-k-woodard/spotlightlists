@@ -1,7 +1,7 @@
 /* Imports */
 
-import { fetchPets, fetchSnacks } from './fetch-utils.js';
-import { renderPet, renderSnack } from './render-utils.js';
+import { fetchDrinks, fetchPets, fetchSnacks } from './fetch-utils.js';
+import { renderDrink, renderPet, renderSnack } from './render-utils.js';
 
 /* Get DOM Elements */
 const petsContainer = document.getElementById('pets');
@@ -29,6 +29,16 @@ window.addEventListener('load', async () => {
         const snackEl = renderSnack(snack);
 
         snacksContainer.append(snackEl);
+    }
+});
+
+window.addEventListener('load', async () => {
+    const drinks = await fetchDrinks();
+
+    for (let drink of drinks) {
+        const drinkEl = renderDrink(drink);
+
+        drinksContainer.append(drinkEl);
     }
 });
 /* Display Functions */

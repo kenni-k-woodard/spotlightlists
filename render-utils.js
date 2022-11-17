@@ -28,3 +28,20 @@ export function renderSnack(snack) {
 
     return div;
 }
+
+export function renderDrink(drink) {
+    const div = document.createElement('div');
+
+    const h2 = document.createElement('h2');
+    h2.textContent = drink.name;
+
+    const p = document.createElement('p');
+    p.textContent = `temp: ${drink.temperature}, booze?: ${drink.booze}`;
+
+    const p2 = document.createElement('p');
+    p2.textContent = `Best enjoyed: ${drink.season}`;
+
+    div.append(h2, p, p2);
+
+    return div;
+}

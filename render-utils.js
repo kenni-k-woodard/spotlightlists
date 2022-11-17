@@ -45,3 +45,17 @@ export function renderDrink(drink) {
 
     return div;
 }
+
+export function renderHobby(hobby) {
+    const div = document.createElement('div');
+
+    const h2 = document.createElement('h2');
+    h2.textContent = hobby.name;
+
+    const p = document.createElement('p');
+    p.textContent = `a ${hobby.type} hobby done ${hobby.location} in ${hobby.season}`;
+
+    div.append(h2, p);
+
+    return div;
+}

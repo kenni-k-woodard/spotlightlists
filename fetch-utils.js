@@ -18,3 +18,8 @@ export async function fetchDrinks() {
     const response = await client.from('drinks').select('*');
     return response.data;
 }
+
+export async function fetchHobbies() {
+    const response = await client.from('kenniHobbies').select('*');
+    return response.data;
+}
